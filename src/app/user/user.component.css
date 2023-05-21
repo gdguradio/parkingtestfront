@@ -1,0 +1,55 @@
+/* Apply general styles to the container */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+/* Apply styles to the form wrapper */
+.form-wrapper {
+  width: 45%;
+}
+
+/* Style the form heading */
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Style the form labels */
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Style the select dropdown */
+select {
+  padding: 5px;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Style the error message */
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+.success-message {
+  color: green;
+  margin-top: 10px;
+}
+

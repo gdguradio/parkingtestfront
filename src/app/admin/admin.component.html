@@ -1,0 +1,15 @@
+<h1>Welcome, Admin!</h1>
+
+<div *ngIf="adminData">
+  <ul>
+    <li *ngFor="let item of adminData">{{ item.value }} - {{ item.description }}</li>
+  </ul>
+</div>
+<form (ngSubmit)="search()">
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Search...">
+  <button type="submit">Search</button>
+</form>
+
+<ul>
+  <li *ngFor="let result of searchResults">{{ result }}</li>
+</ul>

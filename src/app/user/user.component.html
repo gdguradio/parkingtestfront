@@ -1,0 +1,41 @@
+<h1>User Page</h1>
+<div class="container">
+  <div class="form-wrapper">
+    <h1>Time In</h1>
+    <form (ngSubmit)="onSubmitTimeIn()">
+      <label for="dropdownEntryPoints">Select Entry Point:</label>
+      <select id="dropdownEntryPoints" [(ngModel)]="selectedEntryPoint" name="dropdownEntryPoints">
+        <option *ngFor="let entryPoint of dropdownEntryPoints" [value]="entryPoint.id">{{ entryPoint.description }}</option>
+      </select>
+
+      <label for="dropdownVehicleType">Select Vehicle Type:</label>
+      <select id="dropdownVehicleType" [(ngModel)]="selectedVehicleType" name="dropdownVehicleType">
+        <option value="SP">Small</option>
+        <option value="MP">Medium</option>
+        <option value="LP">Large</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+    <div [ngClass]="{'error-message': isError, 'success-message': isSuccess}" *ngIf="timeInErrorMessage">{{ timeInErrorMessage }}</div>
+  </div>
+
+  <div class="form-wrapper">
+    <h1>Time Out</h1>
+    <form (ngSubmit)="onSubmitTimeOut()">
+      <label for="dropdownParkingSlot">Parking Slot:</label>
+      <select id="dropdownParkingSlot" [(ngModel)]="selectedParkedSlot" name="dropdownParkingSlot">
+        <option *ngFor="let parkedSlot of dropdownParkingSlot" [value]="parkedSlot.id">{{ parkedSlot.location + ' - ' + parkedSlot.size }}</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+    <div *ngIf="timeOutErrorMessage" [ngClass]="{'error-message': isError, 'success-message': isSuccess}" >{{ timeOutErrorMessage }}</div>
+    <div [innerHTML]="successResultMessage" [ngClass]="{'error-message': isError, 'success-message': isSuccess}" style="white-space: pre-line;"></div>
+  </div>
+</div>
+
+
+
+
+
